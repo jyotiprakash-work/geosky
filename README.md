@@ -1,4 +1,4 @@
-# Weather Reporter
+# Geo sky
 
 A Python package to get all city, stae and country names
 
