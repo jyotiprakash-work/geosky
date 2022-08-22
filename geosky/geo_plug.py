@@ -57,6 +57,8 @@ def all_State_CityNames(flag='all'):
 			if dct['subcountry'] == subcountry:
 				city_list.append(dct['name'])
 		city_list = list(dict.fromkeys(city_list))
+		for i in city_list:
+			city_names.append(i)
 		all_city_list.append({subcountry:city_list})
 
 # 	return city_names  if you want the name of the cities alone in a list
