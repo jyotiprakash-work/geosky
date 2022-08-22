@@ -27,8 +27,9 @@ def all_Country_StateNames():
 		for i in states:
 			for j in i:
 				state_names.append(j)
-# 	return state_names  if you want the name of the states alone in a list
-	return json.dumps(state_list)
+# 	if you want the name of the states alone in a list
+	return state_names
+# 	return json.dumps(state_list)
 
 def all_State_CityNames(flag='all'):
 	all_subcountry = list()
@@ -60,12 +61,12 @@ def all_State_CityNames(flag='all'):
 		for i in city_list:
 			city_names.append(i)
 		all_city_list.append({subcountry:city_list})
-
-# 	return city_names  if you want the name of the cities alone in a list
-	return json.dumps(all_city_list)
-
-
+# 	if you want the name of the cities alone in a list
+	return city_names
+# 	return json.dumps(all_city_list)
 
 
 
-#print(all_State_CityNames())
+
+
+print(all_State_CityNames())
