@@ -10,6 +10,8 @@ def all_CountryNames():
 
 def all_Country_StateNames():
 	all_country = list()
+	states = []
+	state_names = []
 	for dct in data:
 		all_country.append(dct['country'])
 	all_country = list(dict.fromkeys(all_country))
@@ -20,12 +22,19 @@ def all_Country_StateNames():
 			if dct['country'] == country:
 				all_state.append(dct['subcountry'])
 		all_state = list(dict.fromkeys(all_state))
+		states.append(all_state)
 		state_list.append({country:all_state})
+		for i in states:
+			for j in i:
+				state_names.append(j)
+# 	return state_names  if you want the name of the states alone in a list
 	return json.dumps(state_list)
 
 def all_State_CityNames(flag='all'):
 	all_subcountry = list()
 	all_city_list = list()
+	cities = []
+	city_names = []
 	for dct in data:
 		all_subcountry.append(dct['subcountry'])
 	all_subcountry = list(dict.fromkeys(all_subcountry))
@@ -37,6 +46,10 @@ def all_State_CityNames(flag='all'):
 					city_list.append(dct['name'])
 			city_list = list(dict.fromkeys(city_list))
 			all_city_list.append({subcountry:city_list})
+			cities.append(city_list)
+			for i in cities:
+				for j in i:
+					city_names.append(j)
 	else:
 		city_list = list()
 		subcountry = flag
@@ -46,7 +59,7 @@ def all_State_CityNames(flag='all'):
 		city_list = list(dict.fromkeys(city_list))
 		all_city_list.append({subcountry:city_list})
 
-	
+# 	return city_names  if you want the name of the cities alone in a list
 	return json.dumps(all_city_list)
 
 
